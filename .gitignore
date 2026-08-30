@@ -1,0 +1,25 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.envrc
+*.pem
+*.key
+*.p12
+
+# Private WhatsApp session, message database, and tunnel state
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local tooling
+*.log
+.DS_Store
+Thumbs.db

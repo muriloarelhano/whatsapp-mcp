@@ -1,0 +1,42 @@
+{
+  "name": "whatsapp-mcp-local",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only local WhatsApp bridge exposed as an MCP server.",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "check": "tsc --noEmit",
+    "test": "bun test",
+    "setup": "bun scripts/manage.ts setup",
+    "secrets": "bun scripts/manage.ts secrets",
+    "pairing:open": "bun scripts/manage.ts pairing",
+    "migrate:data": "bun scripts/manage.ts migrate-data",
+    "tunnel:doctor": "bun scripts/manage.ts tunnel doctor",
+    "tunnel:start": "bun scripts/manage.ts tunnel start",
+    "verify": "bun scripts/manage.ts verify",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "qrcode": "1.5.4",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/bun": "1.4.0",
+    "@types/node": "26.4.0",
+    "@types/qrcode": "1.5.6",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "bun": ">=1.4.0"
+  }
+}

@@ -1,0 +1,7 @@
+# Merge this server entry into %USERPROFILE%\\.codex\\config.toml,
+# after defining WHATSAPP_MCP_TOKEN as a User environment variable.
+#
+# The token is deliberately not stored in this file. It is generated in .env.
+[mcp_servers.whatsapp_standalone]
+url = "http://127.0.0.1:8765/mcp"
+bearer_token_env_var = "WHATSAPP_MCP_TOKEN"

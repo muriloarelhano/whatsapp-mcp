@@ -1,0 +1,21 @@
+services:
+  whatsapp-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: whatsapp-mcp
+    restart: unless-stopped
+    depends_on:
+      whatsapp-mcp-init:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    environment:
+      DATA_DIR: /data
+      HOST: 0.0.0.0
+      PORT: 8765
+    ports:
+      - "127.0.0.1:${HOST_PORT:-8765}:8765"
+    volumes:
+      - ./data:/data
+    read_only: true
